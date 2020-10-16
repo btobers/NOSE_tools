@@ -1,0 +1,8 @@
+# Pycache
+__pycache__/
+
+# vscode
+.vscode/
+
+# Python bytecode
+*.pyc
