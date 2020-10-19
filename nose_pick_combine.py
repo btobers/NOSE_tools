@@ -6,8 +6,8 @@ import sys
 # script designed to merge the picks from one directory in to a single csv file
 # BST, 27NOV19
 
-in_dir = "/media/btober/beefmaster/MARS/targ/supl/UAF/2016/picks/"
-out_fname = "2016_combined.csv"
+in_dir = "/media/btober/beefmaster/MARS/targ/supl/UAF/2019/picks/"
+out_fname = "2019_combined.csv"
 
 track = np.array([]).astype(str)
 trace = np.array([]).astype(int)
@@ -47,7 +47,7 @@ for file in glob.glob(in_dir + "*pk.csv"):
     thick = np.append(thick,dat["thick"])
 
 
-out = pd.DataFrame({"trace": trace, "lon": lon, "lat": lat, "alt": alt, "gndElev": gndElev,
+out = pd.DataFrame({"track": track, "trace": trace, "lon": lon, "lat": lat, "alt": alt, "gndElev": gndElev,
                     "srfIdx": srfIdx, "srfTwtt": srfTwtt, "srfAmp": srfAmp, 
                     "subsrfIdx": subsrfIdx, "subsrfTwtt": subsrfTwtt, 
                     "subsrfAmp": subsrfAmp, "subsrfElev": subsrfElev, "thick": thick})
